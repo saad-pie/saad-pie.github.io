@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteveAI | Ultimate Multi-Modal AI Assistant</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Fira+Code:wght@400;500;700&display=swap');
+
+        :root {
+            --bg-color: #0b0f19;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--card-border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.25rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-blue); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 7rem 2rem 4rem 2rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 0.9rem; text-decoration: none; margin-bottom: 2rem; }
+
+        .detail-hero { background: linear-gradient(145deg, #182238 0%, #0f172a 100%); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 24px; padding: 3rem; margin-bottom: 3rem; }
+        .badge { display: inline-block; padding: 0.3rem 0.9rem; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(96, 165, 250, 0.3); border-radius: 50px; color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 0.8rem; margin-bottom: 1rem; }
+
+        .endpoints-container { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.5rem 0; padding: 1rem 1.25rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--card-border); border-radius: 12px; }
+        .endpoints-label { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent-purple); font-weight: 700; margin-right: 0.5rem; }
+        .endpoint-link { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent-cyan); text-decoration: none; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.25); padding: 0.35rem 0.85rem; border-radius: 8px; transition: all 0.2s ease; }
+        .endpoint-link:hover { background: rgba(6, 182, 212, 0.2); border-color: var(--accent-cyan); color: #fff; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .feature-card { background: rgba(15, 23, 42, 0.7); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.5rem; }
+        .feature-card h4 { color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 0.75rem; }
+        .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+        .feature-card ul { list-style: none; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+        .feature-card ul li { margin-bottom: 0.3rem; }
+
+        footer { text-align: center; padding: 2.5rem 2rem; background-color: #070a12; color: var(--text-muted); font-family: 'Fira Code', monospace; font-size: 0.85rem; border-top: 1px solid var(--card-border); }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span>⚡</span> SaadPie</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Portfolio</a></li>
+                <li><a href="steveai.html" class="nav-link active">SteveAI</a></li>
+                <li><a href="ashband.html" class="nav-link">ASH BAND</a></li>
+                <li><a href="callerai.html" class="nav-link">CallerAI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Portfolio Overview</a>
+        
+        <div class="detail-hero">
+            <span class="badge">🤖 Flagship AI System</span>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; color: #60a5fa;">SteveAI — Ultimate AI Assistant</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem;">Co-engineered by <strong>Saadpie</strong> &amp; Aasmaan Rauf</p>
+
+            <div class="endpoints-container">
+                <span class="endpoints-label">🌐 Dedicated Live Mirrors:</span>
+                <a href="https://steve-ai.netlify.app" target="_blank" class="endpoint-link">🔗 steve-ai.netlify.app</a>
+                <a href="https://steveai-v4.vercel.app" target="_blank" class="endpoint-link">🔗 steveai-v4.vercel.app</a>
+                <a href="https://steveai.qzz.io" target="_blank" class="endpoint-link">🌐 steveai.qzz.io</a>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+                SteveAI is a comprehensive multi-modal AI orchestrator built to eliminate single-model constraints. By routing queries dynamically through zero-cost edge proxies and specialized model engines, SteveAI delivers hyper-efficient reasoning, real-time voice, image generation, video synthesis, and 3D rendering.
+            </p>
+        </div>
+
+        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Architecture Highlights</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>🧠 Text &amp; Reasoning</h4>
+                <ul>
+                    <li>• Gemini 3.5 Flash: 50,000 msg/day limit</li>
+                    <li>• Qwen Coder: 22,500 msg/day capacity</li>
+                    <li>• GLM 5.2, DeepSeek V3.1 &amp; Command R+</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h4>🎙️ Live Audio &amp; Agents</h4>
+                <ul>
+                    <li>• Gemini 3 Flash Live with 30+ voice modes</li>
+                    <li>• OpenClaw Elite agent model execution</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h4>🎨 Visuals &amp; 3D Engine</h4>
+                <ul>
+                    <li>• Gemini 3 Pro Vision &amp; SDXL Base</li>
+                    <li>• Flux Series (Anime, Hyper-Realism)</li>
+                    <li>• Stable Fast 3D Mesh Engine</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h4>🎬 Video Synthesis</h4>
+                <ul>
+                    <li>• Wan 2.1 T2V (14B): 9 active mirrors</li>
+                    <li>• Wan 2.2 T2V: 6 active mirrors</li>
+                    <li>• LTX-Video: 17 active mirrors</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Navigate: <a href="index.html">Portfolio Home</a> | <a href="ashband.html">ASH BAND</a> | <a href="callerai.html">CallerAI</a></p>
+    </footer>
+
+</body>
+</html>
