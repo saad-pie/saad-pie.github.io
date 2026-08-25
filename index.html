@@ -18,8 +18,10 @@
             --accent-emerald: #10b981;
             --accent-amber: #f59e0b;
             --accent-pink: #ec4899;
+            --accent-gold: #eab308;
             --card-border: rgba(255, 255, 255, 0.08);
             --glow-blue: rgba(59, 130, 246, 0.2);
+            --glow-gold: rgba(234, 179, 8, 0.25);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,27 +40,27 @@
 
         /* Profile Header */
         header { min-height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 1.5rem 4rem 1.5rem; background: radial-gradient(circle at 50% 15%, #1e293b 0%, #080d1a 75%); }
-        .profile-avatar { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 1.25rem; box-shadow: 0 0 30px var(--glow-blue); border: 2px solid rgba(255,255,255,0.2); }
-        .badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: 50px; color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 0.8rem; margin-bottom: 1.25rem; max-width: 90%; text-overflow: ellipsis; }
-        .title { font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(135deg, #60a5fa 0%, #c084fc 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.15; }
+        .profile-avatar { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 1.25rem; box-shadow: 0 0 35px var(--glow-gold); border: 2px solid rgba(255,255,255,0.2); }
+        .badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1rem; background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 50px; color: var(--accent-gold); font-family: 'Fira Code', monospace; font-size: 0.8rem; margin-bottom: 1.25rem; max-width: 90%; text-overflow: ellipsis; }
+        .title { font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(135deg, #facc15 0%, #60a5fa 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.15; }
         .subtitle { font-size: clamp(0.9rem, 2.5vw, 1.15rem); color: var(--text-muted); margin-bottom: 1.5rem; font-family: 'Fira Code', monospace; }
-        .hero-desc { max-width: 650px; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+        .hero-desc { max-width: 680px; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 5rem 1.5rem; }
         .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-header h2 { font-size: 2rem; background: linear-gradient(to right, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-header h2 { font-size: 2rem; background: linear-gradient(to right, #facc15, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .section-header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.3rem; }
 
         /* Card Grid Layout */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         
         .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 1.75rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card:hover { transform: translateY(-5px); border-color: rgba(96, 165, 250, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        .card:hover { transform: translateY(-5px); border-color: rgba(250, 204, 21, 0.4); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
         
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
         .card-icon { font-size: 2rem; }
         .card-title { font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
-        .card-tagline { font-size: 0.8rem; color: var(--accent-cyan); font-family: 'Fira Code', monospace; margin-bottom: 0.8rem; }
+        .card-tagline { font-size: 0.8rem; color: var(--accent-gold); font-family: 'Fira Code', monospace; margin-bottom: 0.8rem; }
         .card-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.6; flex-grow: 1; }
         
         .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
@@ -93,24 +95,72 @@
     </nav>
 
     <header>
-        <div class="profile-avatar">⚡</div>
-        <span class="badge">🚀 Saad Pie • AI &amp; Hardware Architect</span>
+        <div class="profile-avatar">📈</div>
+        <span class="badge">👑 Saad Pie • AI Architect &amp; Quant Forex Trader</span>
         <h1 class="title">Saad Pie</h1>
-        <p class="subtitle">&gt; Multi-Modal AI | Qubit Models | Spatial Hardware</p>
+        <p class="subtitle">&gt; Forex Quant | Gold AI Models | Multi-Modal Orchestrators</p>
         <p class="hero-desc">
-            Developer &amp; creator building custom LLM architectures, multi-model AI orchestration engines, screenless wearable hardware, and web utility ecosystems.
+            3+ years mastering Forex markets with a proven +20% return on Exness Cent. Architecting predictive AI models for Gold (XAUUSD) alongside custom LLM networks and wearable spatial tech! 🚀📊✨
         </p>
     </header>
 
     <div class="container">
-        <!-- Section 1: Flagship Ventures & Neural Models -->
+        <!-- Section 1: Financial Engineering & Quant Systems (NEW!) -->
+        <div class="section-header">
+            <h2>Financial Quant &amp; Trading AI</h2>
+            <p>Algorithmic market modeling, Exness execution, and commodity AI predictions.</p>
+        </div>
+
+        <div class="grid" style="margin-bottom: 4rem;">
+            <!-- Forex AI Predictor (Gold / XAUUSD) -->
+            <div class="card" style="border-color: rgba(234, 179, 8, 0.3);">
+                <div>
+                    <div class="card-header">
+                        <span class="card-icon">🥇</span>
+                        <span class="tag" style="background: rgba(234, 179, 8, 0.15); color: #facc15;">Quant Model</span>
+                    </div>
+                    <h3 class="card-title" style="color: #facc15;">Gold (XAUUSD) AI Predictor</h3>
+                    <div class="card-tagline">3 Years Forex Experience • Predictive ML</div>
+                    <p class="card-desc">Machine learning forecasting engine specifically trained on high-volatility Gold price dynamics. Combines technical indicators, pattern recognition, and trend analytics for precise entry/exit signals.</p>
+                    <div class="card-tags">
+                        <span class="tag">XAUUSD</span>
+                        <span class="tag">Predictive ML</span>
+                        <span class="tag">Forex AI</span>
+                        <span class="tag">Price Action</span>
+                    </div>
+                </div>
+                <a href="#forex-ai" class="btn" style="border-color: rgba(234, 179, 8, 0.4); color: #facc15; background: rgba(234, 179, 8, 0.1);">Explore Quant Model &rarr;</a>
+            </div>
+
+            <!-- Exness Cent Account Track Record -->
+            <div class="card" style="border-color: rgba(16, 185, 129, 0.3);">
+                <div>
+                    <div class="card-header">
+                        <span class="card-icon">💵</span>
+                        <span class="tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">+20% Return</span>
+                    </div>
+                    <h3 class="card-title" style="color: #34d399;">Exness Cent Execution</h3>
+                    <div class="card-tagline">Disciplined Risk &amp; Strategy</div>
+                    <p class="card-desc">Active trading strategy running on Exness Cent accounts, yielding a consistent 20% return through disciplined risk management, lot size optimization, and algorithmic execution.</p>
+                    <div class="card-tags">
+                        <span class="tag">Exness</span>
+                        <span class="tag">+20% ROI</span>
+                        <span class="tag">Cent Account</span>
+                        <span class="tag">Risk Mgmt</span>
+                    </div>
+                </div>
+                <a href="#exness" class="btn" style="border-color: rgba(16, 185, 129, 0.4); color: #34d399; background: rgba(16, 185, 129, 0.1);">Trading Analytics &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Section 2: Flagship Systems & Neural Models -->
         <div class="section-header">
             <h2>Flagship Systems &amp; Neural Models</h2>
             <p>Core AI architectures, custom fine-tuned LLMs, and wearable hardware concepts.</p>
         </div>
 
         <div class="grid" style="margin-bottom: 4rem;">
-            <!-- SteveAI-Mistral-Personas (NEW) -->
+            <!-- SteveAI-Mistral-Personas -->
             <div class="card">
                 <div>
                     <div class="card-header">
@@ -188,7 +238,7 @@
             </div>
         </div>
 
-        <!-- Section 2: Web Apps & Innovations -->
+        <!-- Section 3: Live Web Apps & Innovations -->
         <div class="section-header">
             <h2>Live Web Apps &amp; Innovations</h2>
             <p>Instant utilities, custom lexicons, cloud builders, and web experiences.</p>
@@ -274,7 +324,7 @@
     </div>
 
     <footer>
-        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Ecosystem Hub</p>
+        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Quant &amp; Tech Hub</p>
     </footer>
 
 </body>
