@@ -14,6 +14,7 @@
             --accent-blue: #3b82f6;
             --accent-cyan: #06b6d4;
             --accent-purple: #8b5cf6;
+            --accent-emerald: #10b981;
             --accent-pink: #ec4899;
             --card-bg: #131c2e;
             --card-border: rgba(255, 255, 255, 0.08);
@@ -153,13 +154,13 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Feature Highlight Card (SteveAI) */
+        /* Feature Highlight Card Base */
         .flagship-card {
             background: linear-gradient(145deg, #182238 0%, #0f172a 100%);
             border: 1px solid rgba(96, 165, 250, 0.2);
             border-radius: 20px;
             padding: 2.5rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -298,6 +299,27 @@
             left: 0;
         }
 
+        /* Secondary Highlight Cards */
+        .project-highlight-card {
+            background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .ashband-card {
+            background: linear-gradient(145deg, #064e3b 0%, #0f172a 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
         /* General Cards */
         .card {
             background-color: var(--card-bg);
@@ -378,13 +400,13 @@
     <header>
         <span class="badge">🚀 Saad Pie • AI Engineer & Developer</span>
         <h1 class="title">Hi, I'm Saad Pie</h1>
-        <p class="subtitle">&gt; Multi-Modal AI Orchestrator Developer | Algorithmic Trader | Gothic Writer</p>
+        <p class="subtitle">&gt; Multi-Modal AI Orchestrator Developer | Hardware Architect | Algorithmic Trader</p>
         <p class="hero-desc">
-            A 15-year-old student navigating Cambridge O Levels while engineering massive multi-model AI architectures, trading EUR/USD market structures, and penning atmospheric fiction.
+            A 15-year-old student navigating Cambridge O Levels while engineering massive multi-model AI architectures, hardware wearables, EUR/USD trading systems, and atmospheric fiction.
         </p>
         <div class="hero-btns">
             <a href="https://steve-ai.netlify.app" target="_blank" class="cta-btn">Launch SteveAI ⚡</a>
-            <a href="#projects" class="cta-btn secondary">Explore My Dimensions 👇</a>
+            <a href="#projects" class="cta-btn secondary">Explore My Ventures 👇</a>
         </div>
     </header>
 
@@ -407,7 +429,7 @@
             <div class="endpoints-container">
                 <span class="endpoints-label">🌐 Live Mirrors &amp; Domains:</span>
                 <a href="https://steve-ai.netlify.app" target="_blank" class="endpoint-link">🔗 steve-ai.netlify.app</a>
-                <a href="https://steveai-v4.netlify.app" target="_blank" class="endpoint-link">🔗 steveai-v4.netlify.app</a>
+                <a href="https://steveai-v4.vercel.app" target="_blank" class="endpoint-link">🔗 steveai-v4.vercel.app</a>
                 <a href="https://steveai.qzz.io" target="_blank" class="endpoint-link">🌐 steveai.qzz.io</a>
             </div>
 
@@ -464,21 +486,106 @@
             </div>
         </div>
 
+        <!-- Venture 2: ASH BAND -->
+        <div class="ashband-card">
+            <div class="flagship-header">
+                <div>
+                    <h3 class="flagship-title" style="color: #34d399;">⌚ ASH BAND — Screenless AI Wearable</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
+                        Next-Generation Voice &amp; Spatial Gesture Hardware Interaction
+                    </p>
+                </div>
+                <span class="badge-live" style="color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.15);">● Prototype / Hardware Concept</span>
+            </div>
+
+            <!-- Live Endpoints Bar -->
+            <div class="endpoints-container">
+                <span class="endpoints-label">🌐 Web Endpoints:</span>
+                <a href="https://ash-band.web.app" target="_blank" class="endpoint-link">🔗 ash-band.web.app</a>
+                <a href="https://ashband.netlify.app" target="_blank" class="endpoint-link">🔗 ashband.netlify.app</a>
+            </div>
+
+            <p class="flagship-desc">
+                ASH BAND is a premium, screenless AI wristband concept engineered for seamless natural voice dialogue and remote device orchestration. Utilizing integrated Gyroscope motion sensing and low-latency audio pipelines, it enables intuitive spatial gestures—like double pinching thumb &amp; index finger to trigger or interrupt speech, wrist scrolling for volume control, and dynamic voice mode toggling.
+            </p>
+
+            <div class="model-matrix">
+                <div class="matrix-item">
+                    <h4>🤏 Double Pinch Gestures</h4>
+                    <p>Gyroscope-driven double pinch sensing (thumb + index) to start, stop, or pause AI interactions instantly without looking.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>🎛️ Spatial Motion Scrolling</h4>
+                    <p>Fluid spatial rotational gestures for adjusting volume, switching custom voice modes, or navigating menu states.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>🤖 Integrated AI Agents</h4>
+                    <p>Direct connectivity with autonomous AI agents capable of remotely controlling connected ecosystem hardware and smart tech.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>🎙️ Custom Voice Personas</h4>
+                    <p>On-the-fly switching between predefined and user-customized speech synthesis voice modes for personalized interaction.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Venture 3: CallerAI -->
+        <div class="project-highlight-card">
+            <div class="flagship-header">
+                <div>
+                    <h3 class="flagship-title" style="color: #a78bfa;">📞 CallerAI — Immersive AI Phone System</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
+                        Interactive simulated calling environment
+                    </p>
+                </div>
+                <span class="badge-live" style="color: #c084fc; border-color: rgba(192, 132, 252, 0.3); background: rgba(192, 132, 252, 0.15);">● Live Application</span>
+            </div>
+
+            <!-- Live Endpoint Bar -->
+            <div class="endpoints-container">
+                <span class="endpoints-label">🌐 Web Endpoint:</span>
+                <a href="https://callyourai.netlify.app" target="_blank" class="endpoint-link">🔗 callyourai.netlify.app</a>
+            </div>
+
+            <p class="flagship-desc">
+                CallerAI allows users to create custom AI contacts with tailored personas and behavior prompts. Features scheduled or proactive inbound calls, a dialpad interface, and custom virtual phone numbers. To maximize realism, CallerAI injects contextual environmental ambient audio—such as site construction sounds for an architect—creating an ultra-seamless simulation. Includes an AI Bazar community hub and user profiles.
+            </p>
+
+            <div class="model-matrix">
+                <div class="matrix-item">
+                    <h4>📱 Custom Persona Dialpad</h4>
+                    <p>Build custom contacts with specialized system prompts and dial defined numbers.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>⏰ Proactive & Scheduled Calls</h4>
+                    <p>Configure automated scheduled calls or allow AI entities to call you proactively.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>🎧 Ambient Audio Engine</h4>
+                    <p>Contextual background audio clips (e.g., site hammering, cafe chatter) for lifelike immersion.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>🛍️ AI Bazar Community</h4>
+                    <p>Browse, share, and deploy community-created AI caller personas and custom configurations.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Other Dimensions Grid -->
         <h2>My Dimensions</h2>
-        <p class="section-desc">Blending multi-modal machine intelligence, financial analysis, and literary craftsmanship.</p>
+        <p class="section-desc">Blending multi-modal machine intelligence, hardware innovation, financial analysis, and literary craftsmanship.</p>
 
         <div class="grid">
-            <!-- Dev & Lexicon Card -->
+            <!-- Dev & Hardware Card -->
             <div class="card">
                 <div class="card-icon">⚡</div>
-                <h3>AI & Web Engineering</h3>
-                <p>Architecting client-side, zero-API web architectures. Beyond SteveAI, developer of the <em>qousaint</em> lexicon project—an exploration into bespoke linguistic landing pages and interactive user experiences.</p>
+                <h3>AI & Hardware Engineering</h3>
+                <p>Architecting multi-modal web platforms, screenless AI wearables, and edge AI proxies. Creator of SteveAI, ASH BAND, CallerAI, and the <em>qousaint</em> lexicon project.</p>
                 <div class="card-tags">
                     <span class="tag">SteveAI</span>
-                    <span class="tag">Multi-Modal</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Edge Proxies</span>
+                    <span class="tag">ASH BAND</span>
+                    <span class="tag">CallerAI</span>
+                    <span class="tag">Wearables</span>
                 </div>
             </div>
 
@@ -511,7 +618,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Access SteveAI at <a href="https://steveai.qzz.io" target="_blank">steveai.qzz.io</a> | <a href="https://steveai-v4.netlify.app" target="_blank">steveai-v4.netlify.app</a> | <a href="https://steve-ai.netlify.app" target="_blank">steve-ai.netlify.app</a></p>
+        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Explore Ventures: <a href="https://steveai.qzz.io" target="_blank">SteveAI</a> | <a href="https://ash-band.web.app" target="_blank">ASH BAND</a> | <a href="https://callyourai.netlify.app" target="_blank">CallerAI</a></p>
     </footer>
 
 </body>
