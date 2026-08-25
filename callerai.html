@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallerAI | Simulated Voice System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Fira+Code:wght@400;500;700&display=swap');
+
+        :root {
+            --bg-color: #0b0f19;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--card-border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.25rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: #a78bfa; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 7rem 2rem 4rem 2rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 0.9rem; text-decoration: none; margin-bottom: 2rem; }
+
+        .detail-hero { background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 24px; padding: 3rem; margin-bottom: 3rem; }
+        .badge { display: inline-block; padding: 0.3rem 0.9rem; background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(192, 132, 252, 0.3); border-radius: 50px; color: #c084fc; font-family: 'Fira Code', monospace; font-size: 0.8rem; margin-bottom: 1rem; }
+
+        .endpoints-container { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.5rem 0; padding: 1rem 1.25rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--card-border); border-radius: 12px; }
+        .endpoints-label { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent-purple); font-weight: 700; margin-right: 0.5rem; }
+        .endpoint-link { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent-cyan); text-decoration: none; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.25); padding: 0.35rem 0.85rem; border-radius: 8px; transition: all 0.2s ease; }
+        .endpoint-link:hover { background: rgba(6, 182, 212, 0.2); border-color: var(--accent-cyan); color: #fff; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .feature-card { background: rgba(15, 23, 42, 0.7); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.5rem; }
+        .feature-card h4 { color: #a78bfa; font-size: 1.1rem; margin-bottom: 0.75rem; }
+        .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+        footer { text-align: center; padding: 2.5rem 2rem; background-color: #070a12; color: var(--text-muted); font-family: 'Fira Code', monospace; font-size: 0.85rem; border-top: 1px solid var(--card-border); }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span>⚡</span> SaadPie</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Portfolio</a></li>
+                <li><a href="steveai.html" class="nav-link">SteveAI</a></li>
+                <li><a href="ashband.html" class="nav-link">ASH BAND</a></li>
+                <li><a href="callerai.html" class="nav-link active">CallerAI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Portfolio Overview</a>
+        
+        <div class="detail-hero">
+            <span class="badge">📞 Voice Simulation Web App</span>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; color: #a78bfa;">CallerAI — Simulated Voice Environment</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem;">Proactive &amp; Inbound Simulated Telephony</p>
+
+            <div class="endpoints-container">
+                <span class="endpoints-label">🌐 Web Endpoint:</span>
+                <a href="https://callyourai.netlify.app" target="_blank" class="endpoint-link">🔗 callyourai.netlify.app</a>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+                CallerAI simulates phone interactions by creating custom AI contacts with tailored behavioral scripts, dialpads, and call scheduling. Blending speech synthesis with contextual ambient sound layers, it delivers realistic voice call simulations.
+            </p>
+        </div>
+
+        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">System Architecture</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>📱 Contact &amp; Dialpad Builder</h4>
+                <p>Define virtual numbers, avatars, and custom prompt rules for tailored phone contacts.</p>
+            </div>
+            <div class="feature-card">
+                <h4>⏰ Proactive &amp; Scheduled Inbound</h4>
+                <p>Configure automated call times for AI contacts to initiate incoming calls directly to you.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🎧 Ambient Audio Engine</h4>
+                <p>Inject real background sound clips (construction sites, rain, coffee shops) directly into the call stream.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🛍️ AI Bazar Hub</h4>
+                <p>Share and clone community-built caller personas and custom setup configurations.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Navigate: <a href="index.html">Portfolio Home</a> | <a href="steveai.html">SteveAI</a> | <a href="ashband.html">ASH BAND</a></p>
+    </footer>
+
+</body>
+</html>
