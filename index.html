@@ -13,612 +13,147 @@
             --text-muted: #94a3b8;
             --accent-blue: #3b82f6;
             --accent-cyan: #06b6d4;
-            --accent-purple: #8b5cf6;
-            --accent-emerald: #10b981;
-            --accent-pink: #ec4899;
             --card-bg: #131c2e;
             --card-border: rgba(255, 255, 255, 0.08);
             --glow: rgba(59, 130, 246, 0.25);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--card-border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.25rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-cyan); }
 
-        /* Container & Grid */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
+        header { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 7rem 2rem 3rem 2rem; background: radial-gradient(circle at 50% 20%, #1e293b 0%, #0b0f19 80%); }
+        .badge { display: inline-block; padding: 0.4rem 1.2rem; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(96, 165, 250, 0.3); border-radius: 50px; color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 0.85rem; margin-bottom: 1.5rem; }
+        .title { font-size: 4rem; font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 1.5rem; font-family: 'Fira Code', monospace; }
+        .hero-desc { max-width: 680px; margin: 0 auto 2.5rem auto; color: var(--text-muted); font-size: 1.05rem; }
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            background: linear-gradient(to right, #60a5fa, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        section h2 { font-size: 2.2rem; margin-bottom: 0.5rem; text-align: center; background: linear-gradient(to right, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-desc { text-align: center; color: var(--text-muted); margin-bottom: 3.5rem; font-size: 1rem; }
 
-        .section-desc {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 3.5rem;
-            font-size: 1.05rem;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .summary-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; }
+        .summary-card:hover { transform: translateY(-6px); border-color: rgba(96, 165, 250, 0.3); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); }
+        .summary-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .summary-icon { font-size: 2.2rem; }
+        .summary-title { font-size: 1.5rem; color: #60a5fa; margin-bottom: 0.4rem; }
+        .summary-tagline { font-size: 0.85rem; color: var(--accent-cyan); font-family: 'Fira Code', monospace; margin-bottom: 1rem; }
+        .summary-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
+        .card-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tag { font-family: 'Fira Code', monospace; font-size: 0.75rem; background: rgba(255, 255, 255, 0.05); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 6px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
+        .page-link-btn { text-decoration: none; text-align: center; width: 100%; padding: 0.8rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: var(--accent-blue); font-weight: 600; font-size: 0.9rem; transition: all 0.25s ease; display: inline-block; }
+        .page-link-btn:hover { background: var(--accent-blue); color: #fff; box-shadow: 0 4px 15px var(--glow); }
 
-        /* Hero Section */
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            background: radial-gradient(circle at 50% 20%, #1e293b 0%, #0b0f19 80%);
-            position: relative;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            background: rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            border-radius: 50px;
-            color: var(--accent-cyan);
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .title {
-            font-size: 4.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .hero-desc {
-            max-width: 680px;
-            margin: 0 auto 2.5rem auto;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .cta-btn {
-            padding: 0.9rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #fff;
-            background-color: var(--accent-blue);
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px var(--glow);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-btn:hover {
-            background-color: #2563eb;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
-        }
-
-        .cta-btn.secondary {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--card-border);
-            box-shadow: none;
-        }
-
-        .cta-btn.secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Feature Highlight Card Base */
-        .flagship-card {
-            background: linear-gradient(145deg, #182238 0%, #0f172a 100%);
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 3.5rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .flagship-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .flagship-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .flagship-title {
-            font-size: 2rem;
-            color: #60a5fa;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .badge-live {
-            background: rgba(34, 197, 94, 0.15);
-            color: #4ade80;
-            border: 1px solid rgba(74, 222, 128, 0.3);
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-family: 'Fira Code', monospace;
-        }
-
-        /* Access Endpoints Bar */
-        .endpoints-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            align-items: center;
-            margin: 1.25rem 0 1.75rem 0;
-            padding: 1rem;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-        }
-
-        .endpoints-label {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-purple);
-            font-weight: 700;
-            margin-right: 0.5rem;
-        }
-
-        .endpoint-link {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            text-decoration: none;
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.25);
-            padding: 0.3rem 0.8rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .endpoint-link:hover {
-            background: rgba(6, 182, 212, 0.2);
-            border-color: var(--accent-cyan);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        .flagship-desc {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
-        }
-
-        .model-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.25rem;
-            margin-top: 1.5rem;
-        }
-
-        .matrix-item {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 1.25rem;
-        }
-
-        .matrix-item h4 {
-            color: var(--accent-cyan);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .matrix-item p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        .matrix-item ul {
-            list-style: none;
-            color: var(--text-muted);
-            font-size: 0.825rem;
-            margin-top: 0.5rem;
-        }
-
-        .matrix-item ul li {
-            margin-bottom: 0.3rem;
-            padding-left: 0.8rem;
-            position: relative;
-        }
-
-        .matrix-item ul li::before {
-            content: "•";
-            color: var(--accent-purple);
-            position: absolute;
-            left: 0;
-        }
-
-        /* Secondary Highlight Cards */
-        .project-highlight-card {
-            background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 3.5rem;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .ashband-card {
-            background: linear-gradient(145deg, #064e3b 0%, #0f172a 100%);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 4rem;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        /* General Cards */
-        .card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--card-border);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-            border-color: rgba(96, 165, 250, 0.3);
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-            color: #60a5fa;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            flex-grow: 1;
-        }
-
-        .card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--accent-cyan);
-            padding: 0.2rem 0.6rem;
-            border-radius: 6px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2.5rem 2rem;
-            background-color: #070a12;
-            color: var(--text-muted);
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            border-top: 1px solid var(--card-border);
-        }
-
-        footer a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .title { font-size: 3rem; }
-            .subtitle { font-size: 1.1rem; }
-            .flagship-header { flex-direction: column; align-items: flex-start; }
-            .endpoints-container { flex-direction: column; align-items: flex-start; }
-        }
+        footer { text-align: center; padding: 2.5rem 2rem; background-color: #070a12; color: var(--text-muted); font-family: 'Fira Code', monospace; font-size: 0.85rem; border-top: 1px solid var(--card-border); }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <header>
-        <span class="badge">🚀 Saad Pie • AI Engineer & Developer</span>
-        <h1 class="title">Hi, I'm Saad Pie</h1>
-        <p class="subtitle">&gt; Multi-Modal AI Orchestrator Developer | Hardware Architect | Algorithmic Trader</p>
-        <p class="hero-desc">
-            A 15-year-old student navigating Cambridge O Levels while engineering massive multi-model AI architectures, hardware wearables, EUR/USD trading systems, and atmospheric fiction.
-        </p>
-        <div class="hero-btns">
-            <a href="https://steve-ai.netlify.app" target="_blank" class="cta-btn">Launch SteveAI ⚡</a>
-            <a href="#projects" class="cta-btn secondary">Explore My Ventures 👇</a>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span>⚡</span> SaadPie</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Portfolio</a></li>
+                <li><a href="steveai.html" class="nav-link">SteveAI</a></li>
+                <li><a href="ashband.html" class="nav-link">ASH BAND</a></li>
+                <li><a href="callerai.html" class="nav-link">CallerAI</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <header>
+        <span class="badge">🚀 Saad Pie • Developer & Hardware Architect</span>
+        <h1 class="title">Hi, I'm Saad Pie</h1>
+        <p class="subtitle">&gt; Multi-Modal Orchestration | Spatial Hardware | Algorithmic Systems</p>
+        <p class="hero-desc">
+            Building high-scale multi-model AI orchestration frameworks, screenless spatial hardware wearables, and specialized trading EAs.
+        </p>
     </header>
 
-    <!-- Main Content Container -->
-    <div class="container" id="projects">
-        
-        <!-- Flagship Project: SteveAI -->
-        <div class="flagship-card">
-            <div class="flagship-header">
-                <div>
-                    <h3 class="flagship-title">🤖 SteveAI — Ultimate AI Assistant</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
-                        Co-engineered by <strong>Saadpie</strong> &amp; Aasmaan Rauf
-                    </p>
-                </div>
-                <span class="badge-live">● v4.0 Active</span>
-            </div>
+    <div class="container">
+        <section>
+            <h2>Featured Ventures</h2>
+            <p class="section-desc">Short summaries below — click any project to visit its dedicated page.</p>
 
-            <!-- Live Endpoints / Web Links Bar -->
-            <div class="endpoints-container">
-                <span class="endpoints-label">🌐 Live Mirrors &amp; Domains:</span>
-                <a href="https://steve-ai.netlify.app" target="_blank" class="endpoint-link">🔗 steve-ai.netlify.app</a>
-                <a href="https://steveai-v4.vercel.app" target="_blank" class="endpoint-link">🔗 steveai-v4.vercel.app</a>
-                <a href="https://steveai.qzz.io" target="_blank" class="endpoint-link">🌐 steveai.qzz.io</a>
-            </div>
-
-            <p class="flagship-desc">
-                A high-performance Multi-Modal AI Orchestrator featuring specialized routing, zero-API friction, client-side efficiency, and support for over 30+ top-tier AI models across reasoning, vision, audio, video, and 3D generation.
-            </p>
-
-            <div class="model-matrix">
-                <!-- Text & Reasoning -->
-                <div class="matrix-item">
-                    <h4>🧠 Text & Reasoning</h4>
-                    <p>High-throughput models engineered for complex logic, coding, and dynamic responses.</p>
-                    <ul>
-                        <li><strong>Gemini 3.5 Flash:</strong> 50,000 msg/day limit</li>
-                        <li><strong>Qwen Coder:</strong> 22,500 msg/day capacity</li>
-                        <li><strong>GLM 5.2:</strong> Capable of OS generation from scratch</li>
-                        <li><strong>Ox Alpha, DeepSeek V3.1, Llama 4 Maverick, Command R+</strong></li>
-                        <li><strong>ChatGPT 6 Terra &amp; Sol</strong></li>
-                    </ul>
+            <div class="grid">
+                <!-- SteveAI Summary -->
+                <div class="summary-card">
+                    <div>
+                        <div class="summary-card-header">
+                            <span class="summary-icon">🤖</span>
+                            <span class="tag" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa;">AI Orchestrator</span>
+                        </div>
+                        <h3 class="summary-title">SteveAI</h3>
+                        <div class="summary-tagline">Ultimate Multi-Modal AI Assistant</div>
+                        <p class="summary-desc">
+                            High-performance AI Orchestrator routing requests across 30+ specialized models for reasoning, live voice dialogue, video synthesis, and 3D generation.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Gemini 3.5</span>
+                            <span class="tag">Wan 2.1 T2V</span>
+                            <span class="tag">30+ Voice Modes</span>
+                        </div>
+                    </div>
+                    <a href="steveai.html" class="page-link-btn">Visit SteveAI Page &rarr;</a>
                 </div>
 
-                <!-- Live Voice & Agent System -->
-                <div class="matrix-item">
-                    <h4>🎙️ Live Audio & Agents</h4>
-                    <p>Real-time conversational and automated task execution systems.</p>
-                    <ul>
-                        <li><strong>Gemini 3 Flash Live:</strong> 30+ voice modes, 67 languages, 1,000 accent combinations</li>
-                        <li><strong>Agent Mode:</strong> Powered by OpenClaw Elite on Gemini 3.1 Flash with custom execution commands</li>
-                    </ul>
+                <!-- ASH BAND Summary -->
+                <div class="summary-card">
+                    <div>
+                        <div class="summary-card-header">
+                            <span class="summary-icon">⌚</span>
+                            <span class="tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">Screenless Wearable</span>
+                        </div>
+                        <h3 class="summary-title" style="color: #34d399;">ASH BAND</h3>
+                        <div class="summary-tagline">Screenless AI Wearable Wristband</div>
+                        <p class="summary-desc">
+                            Next-gen voice wristband featuring double-pinch gesture recognition, rotational volume controls, and remote connected tech orchestration.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Spatial Gyro</span>
+                            <span class="tag">Double Pinch</span>
+                            <span class="tag">Remote Tech</span>
+                        </div>
+                    </div>
+                    <a href="ashband.html" class="page-link-btn" style="border-color: rgba(16, 185, 129, 0.4); color: #34d399; background: rgba(16, 185, 129, 0.1);">Visit ASH BAND Page &rarr;</a>
                 </div>
 
-                <!-- Visuals & 3D Engine -->
-                <div class="matrix-item">
-                    <h4>🎨 Image & 3D Generation</h4>
-                    <p>High-fidelity visual generation pipeline with specialized image styles.</p>
-                    <ul>
-                        <li><strong>Gemini 3 Pro Vision, Flux (Anime, Realism, 3D), SDXL Base</strong></li>
-                        <li><strong>SD 3.5 Large &amp; DALL-E 3 Style engines</strong></li>
-                        <li><strong>3D Engine:</strong> Integrated Stable Fast 3D model generation</li>
-                    </ul>
-                </div>
-
-                <!-- Video Generation -->
-                <div class="matrix-item">
-                    <h4>🎬 Video Orchestration</h4>
-                    <p>Multi-mirror Text-to-Video (T2V) engine setup for high availability.</p>
-                    <ul>
-                        <li><strong>Wan 2.1 T2V (14B):</strong> 9 Hugging Face mirrors</li>
-                        <li><strong>Wan 2.2 T2V:</strong> 6 Mirrors available</li>
-                        <li><strong>LTX-Video:</strong> 17 Mirrors available</li>
-                        <li><strong>CogVideoX-5B, HunyuanVideo &amp; Mochi-1</strong></li>
-                    </ul>
+                <!-- CallerAI Summary -->
+                <div class="summary-card">
+                    <div>
+                        <div class="summary-card-header">
+                            <span class="summary-icon">📞</span>
+                            <span class="tag" style="background: rgba(139, 92, 246, 0.15); color: #c084fc;">Voice Simulation</span>
+                        </div>
+                        <h3 class="summary-title" style="color: #a78bfa;">CallerAI</h3>
+                        <div class="summary-tagline">Immersive Simulated AI Phone System</div>
+                        <p class="summary-desc">
+                            Custom interactive calling environment featuring scheduled/proactive inbound calls, ambient background audio injection, and AI Bazar.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Inbound Calls</span>
+                            <span class="tag">Ambient Audio</span>
+                            <span class="tag">AI Bazar</span>
+                        </div>
+                    </div>
+                    <a href="callerai.html" class="page-link-btn" style="border-color: rgba(139, 92, 246, 0.4); color: #c084fc; background: rgba(139, 92, 246, 0.1);">Visit CallerAI Page &rarr;</a>
                 </div>
             </div>
-        </div>
-
-        <!-- Venture 2: ASH BAND -->
-        <div class="ashband-card">
-            <div class="flagship-header">
-                <div>
-                    <h3 class="flagship-title" style="color: #34d399;">⌚ ASH BAND — Screenless AI Wearable</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
-                        Next-Generation Voice &amp; Spatial Gesture Hardware Interaction
-                    </p>
-                </div>
-                <span class="badge-live" style="color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.15);">● Prototype / Hardware Concept</span>
-            </div>
-
-            <!-- Live Endpoints Bar -->
-            <div class="endpoints-container">
-                <span class="endpoints-label">🌐 Web Endpoints:</span>
-                <a href="https://ash-band.web.app" target="_blank" class="endpoint-link">🔗 ash-band.web.app</a>
-                <a href="https://ashband.netlify.app" target="_blank" class="endpoint-link">🔗 ashband.netlify.app</a>
-            </div>
-
-            <p class="flagship-desc">
-                ASH BAND is a premium, screenless AI wristband concept engineered for seamless natural voice dialogue and remote device orchestration. Utilizing integrated Gyroscope motion sensing and low-latency audio pipelines, it enables intuitive spatial gestures—like double pinching thumb &amp; index finger to trigger or interrupt speech, wrist scrolling for volume control, and dynamic voice mode toggling.
-            </p>
-
-            <div class="model-matrix">
-                <div class="matrix-item">
-                    <h4>🤏 Double Pinch Gestures</h4>
-                    <p>Gyroscope-driven double pinch sensing (thumb + index) to start, stop, or pause AI interactions instantly without looking.</p>
-                </div>
-                <div class="matrix-item">
-                    <h4>🎛️ Spatial Motion Scrolling</h4>
-                    <p>Fluid spatial rotational gestures for adjusting volume, switching custom voice modes, or navigating menu states.</p>
-                </div>
-                <div class="matrix-item">
-                    <h4>🤖 Integrated AI Agents</h4>
-                    <p>Direct connectivity with autonomous AI agents capable of remotely controlling connected ecosystem hardware and smart tech.</p>
-                </div>
-                <div class="matrix-item">
-                    <h4>🎙️ Custom Voice Personas</h4>
-                    <p>On-the-fly switching between predefined and user-customized speech synthesis voice modes for personalized interaction.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Venture 3: CallerAI -->
-        <div class="project-highlight-card">
-            <div class="flagship-header">
-                <div>
-                    <h3 class="flagship-title" style="color: #a78bfa;">📞 CallerAI — Immersive AI Phone System</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
-                        Interactive simulated calling environment
-                    </p>
-                </div>
-                <span class="badge-live" style="color: #c084fc; border-color: rgba(192, 132, 252, 0.3); background: rgba(192, 132, 252, 0.15);">● Live Application</span>
-            </div>
-
-            <!-- Live Endpoint Bar -->
-            <div class="endpoints-container">
-                <span class="endpoints-label">🌐 Web Endpoint:</span>
-                <a href="https://callyourai.netlify.app" target="_blank" class="endpoint-link">🔗 callyourai.netlify.app</a>
-            </div>
-
-            <p class="flagship-desc">
-                CallerAI allows users to create custom AI contacts with tailored personas and behavior prompts. Features scheduled or proactive inbound calls, a dialpad interface, and custom virtual phone numbers. To maximize realism, CallerAI injects contextual environmental ambient audio—such as site construction sounds for an architect—creating an ultra-seamless simulation. Includes an AI Bazar community hub and user profiles.
-            </p>
-
-            <div class="model-matrix">
-                <div class="matrix-item">
-                    <h4>📱 Custom Persona Dialpad</h4>
-                    <p>Build custom contacts with specialized system prompts and dial defined numbers.</p>
-                </div>
-                <div class="matrix-item">
-                    <h4>⏰ Proactive & Scheduled Calls</h4>
-                    <p>Configure automated scheduled calls or allow AI entities to call you proactively.</p>
-                </div>
-                <div class="matrix-item">
-                    <h4>🎧 Ambient Audio Engine</h4>
-                    <p>Contextual background audio clips (e.g., site hammering, cafe chatter) for lifelike immersion.</p>
-                </div>
-                <div class="matrix-item">
-                    <h4>🛍️ AI Bazar Community</h4>
-                    <p>Browse, share, and deploy community-created AI caller personas and custom configurations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Other Dimensions Grid -->
-        <h2>My Dimensions</h2>
-        <p class="section-desc">Blending multi-modal machine intelligence, hardware innovation, financial analysis, and literary craftsmanship.</p>
-
-        <div class="grid">
-            <!-- Dev & Hardware Card -->
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>AI & Hardware Engineering</h3>
-                <p>Architecting multi-modal web platforms, screenless AI wearables, and edge AI proxies. Creator of SteveAI, ASH BAND, CallerAI, and the <em>qousaint</em> lexicon project.</p>
-                <div class="card-tags">
-                    <span class="tag">SteveAI</span>
-                    <span class="tag">ASH BAND</span>
-                    <span class="tag">CallerAI</span>
-                    <span class="tag">Wearables</span>
-                </div>
-            </div>
-
-            <!-- Trading Card -->
-            <div class="card">
-                <div class="card-icon">📈</div>
-                <h3>Algorithmic Trading</h3>
-                <p>Developing MQL5 Expert Advisors and conducting deep market structure analysis on EUR/USD. Specializing in Fibonacci retracements, pip value optimizations on Standard Cent accounts, and mechanical entry rules.</p>
-                <div class="card-tags">
-                    <span class="tag">MQL5</span>
-                    <span class="tag">EUR/USD</span>
-                    <span class="tag">Price Action</span>
-                    <span class="tag">EAs</span>
-                </div>
-            </div>
-
-            <!-- Writing Card -->
-            <div class="card">
-                <div class="card-icon">🖋️</div>
-                <h3>Creative Prose</h3>
-                <p>Crafting atmospheric gothic short stories and managing a curated "Master Vocab Vault" filled with advanced literary terms. Merging vivid sensory details with structured narrative suspense.</p>
-                <div class="card-tags">
-                    <span class="tag">Gothic Fiction</span>
-                    <span class="tag">Prose</span>
-                    <span class="tag">Vocab Vault</span>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Explore Ventures: <a href="https://steveai.qzz.io" target="_blank">SteveAI</a> | <a href="https://ash-band.web.app" target="_blank">ASH BAND</a> | <a href="https://callyourai.netlify.app" target="_blank">CallerAI</a></p>
+        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • Dedicated Pages: <a href="steveai.html">SteveAI</a> | <a href="ashband.html">ASH BAND</a> | <a href="callerai.html">CallerAI</a></p>
     </footer>
 
 </body>
