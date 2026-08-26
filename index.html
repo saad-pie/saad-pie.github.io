@@ -5,33 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saad Pie | Developer Hub & Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
 
         :root {
-            --bg-color: #060913;
-            --bg-card: rgba(15, 23, 42, 0.65);
-            --bg-card-hover: rgba(26, 38, 66, 0.85);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
+            --bg-color: #030712;
+            --bg-card: rgba(17, 24, 39, 0.4);
+            --bg-card-hover: rgba(31, 41, 55, 0.6);
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --text-dim: #4b5563;
             
-            --accent-cyan: #06b6d4;
-            --accent-cyan-glow: rgba(6, 182, 212, 0.35);
-            --accent-gold: #facc15;
-            --accent-gold-glow: rgba(250, 204, 21, 0.35);
-            --accent-purple: #c084fc;
-            --accent-purple-glow: rgba(192, 132, 252, 0.35);
-            --accent-emerald: #34d399;
-            --accent-emerald-glow: rgba(52, 211, 153, 0.35);
-            --accent-blue: #60a5fa;
-            --accent-pink: #f472b6;
+            --accent-gold: #d97706;
+            --accent-gold-light: #fbbf24;
+            --accent-gold-glow: rgba(217, 119, 6, 0.15);
+            --accent-cyan: #0891b2;
+            --accent-cyan-light: #38bdf8;
+            --accent-purple: #7c3aed;
+            --accent-purple-light: #c084fc;
+            --accent-emerald: #059669;
+            --accent-emerald-light: #34d399;
 
-            --card-border: rgba(255, 255, 255, 0.08);
-            --card-border-hover: rgba(255, 255, 255, 0.2);
-            --radius-lg: 24px;
-            --radius-md: 14px;
-            --radius-sm: 8px;
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --card-border-hover: rgba(217, 119, 6, 0.3);
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -51,17 +50,17 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 60%, rgba(192, 132, 252, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 50% 90%, rgba(250, 204, 21, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(124, 58, 237, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 15% 70%, rgba(8, 145, 178, 0.05) 0%, transparent 40%);
             background-attachment: fixed;
         }
 
         /* --- Scrollbar --- */
-        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg-color); }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #374151; }
 
         /* --- Navigation --- */
         nav {
@@ -69,54 +68,55 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(6, 9, 19, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             z-index: 1000;
             border-bottom: 1px solid var(--card-border);
         }
 
         .nav-container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
         }
 
         .logo {
-            font-size: 1.35rem;
-            font-weight: 800;
+            font-size: 1.1rem;
+            font-weight: 700;
             color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            letter-spacing: -0.5px;
+            gap: 0.75rem;
+            letter-spacing: -0.3px;
         }
 
         .logo-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(250, 204, 21, 0.2));
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            font-size: 1.1rem;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(3, 7, 18, 0.8));
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            color: var(--accent-gold-light);
+            font-size: 0.9rem;
         }
 
         .logo span {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-gold));
+            background: linear-gradient(135deg, #ffffff, var(--text-muted));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
             list-style: none;
             align-items: center;
         }
@@ -124,70 +124,66 @@
         .nav-link {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 500;
             padding: 0.5rem 1rem;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-sm);
             transition: var(--transition);
             border: 1px solid transparent;
         }
 
         .nav-link:hover {
             color: #fff;
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.05);
         }
 
         .nav-link.active {
-            color: var(--accent-cyan);
-            background: rgba(6, 182, 212, 0.1);
-            border-color: rgba(6, 182, 212, 0.3);
-            box-shadow: 0 0 15px var(--accent-cyan-glow);
+            color: var(--accent-gold-light);
+            background: rgba(217, 119, 6, 0.08);
+            border-color: rgba(217, 119, 6, 0.2);
         }
 
         .nav-link.highlight {
-            color: var(--accent-gold);
-            background: rgba(250, 204, 21, 0.1);
-            border-color: rgba(250, 204, 21, 0.3);
+            color: #fff;
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(180, 83, 9, 0.2));
+            border-color: rgba(217, 119, 6, 0.4);
         }
 
         .nav-link.highlight:hover {
-            box-shadow: 0 0 15px var(--accent-gold-glow);
-            background: rgba(250, 204, 21, 0.2);
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.3), rgba(180, 83, 9, 0.3));
+            border-color: rgba(217, 119, 6, 0.6);
         }
 
         /* --- Hero Header --- */
         header {
             position: relative;
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 9rem 1.5rem 5rem 1.5rem;
-            max-width: 1000px;
+            padding: 10rem 1.5rem 6rem 1.5rem;
+            max-width: 900px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .avatar-wrapper {
             position: relative;
-            margin-bottom: 1.75rem;
+            margin: 0 auto 2rem auto;
+            width: 90px;
+            height: 90px;
         }
 
         .profile-avatar {
-            width: 110px;
-            height: 110px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+            background: linear-gradient(135deg, #1f2937, #111827);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 2.2rem;
             position: relative;
             z-index: 2;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
         .avatar-glow {
@@ -195,256 +191,234 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 130px;
-            height: 130px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple), var(--accent-cyan));
-            filter: blur(20px);
-            opacity: 0.6;
+            background: rgba(217, 119, 6, 0.15);
+            filter: blur(15px);
             z-index: 1;
-            animation: pulseGlow 4s infinite alternate;
-        }
-
-        @keyframes pulseGlow {
-            0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1.25rem;
-            background: rgba(250, 204, 21, 0.08);
-            border: 1px solid rgba(250, 204, 21, 0.25);
+            gap: 0.6rem;
+            padding: 0.35rem 1rem;
+            background: rgba(217, 119, 6, 0.05);
+            border: 1px solid rgba(217, 119, 6, 0.2);
             border-radius: 50px;
-            color: var(--accent-gold);
+            color: var(--accent-gold-light);
             font-family: 'Fira Code', monospace;
-            font-size: 0.825rem;
+            font-size: 0.75rem;
             font-weight: 500;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
+            margin-bottom: 1.75rem;
+            letter-spacing: 0.5px;
         }
 
         .badge-dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background-color: var(--accent-gold);
-            box-shadow: 0 0 10px var(--accent-gold);
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+            background-color: var(--accent-gold-light);
+            box-shadow: 0 0 8px var(--accent-gold-light);
         }
 
         .title {
-            font-size: clamp(3rem, 7vw, 5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
-            margin-bottom: 0.75rem;
-            letter-spacing: -1.5px;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #facc15 100%);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            background: linear-gradient(180deg, #ffffff 0%, #9ca3af 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.1;
         }
 
         .subtitle {
-            font-size: clamp(0.95rem, 2vw, 1.2rem);
-            color: var(--accent-cyan);
+            font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+            color: var(--accent-gold-light);
             margin-bottom: 1.5rem;
             font-family: 'Fira Code', monospace;
-            font-weight: 500;
+            font-weight: 400;
+            letter-spacing: -0.2px;
         }
 
         .hero-desc {
-            max-width: 780px;
+            max-width: 720px;
+            margin: 0 auto;
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.8;
             font-weight: 400;
         }
 
+        .hero-desc strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
         /* --- Section Styling --- */
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 2rem 6rem 2rem;
+            padding: 0 2rem 6rem 2rem;
         }
 
         .section-block {
-            margin-bottom: 6rem;
+            margin-bottom: 5rem;
         }
 
         .section-header {
             text-align: left;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             position: relative;
             padding-left: 1rem;
-            border-left: 4px solid var(--accent-cyan);
+            border-left: 2px solid var(--card-border-hover);
         }
 
-        .section-header.gold { border-left-color: var(--accent-gold); }
-        .section-header.purple { border-left-color: var(--accent-purple); }
-        .section-header.emerald { border-left-color: var(--accent-emerald); }
-
         .section-header h2 {
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-size: 1.5rem;
             font-weight: 700;
             color: #fff;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
 
         .section-header p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
+            color: var(--text-dim);
+            font-size: 0.9rem;
             margin-top: 0.2rem;
         }
 
         /* --- Card Grid Layout --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
         .card {
             background: var(--bg-card);
             border: 1px solid var(--card-border);
             border-radius: var(--radius-lg);
-            padding: 2rem;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            padding: 1.75rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: var(--transition);
             position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.03), transparent 40%);
-            pointer-events: none;
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             background: var(--bg-card-hover);
             border-color: var(--card-border-hover);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
         }
-
-        /* Accent Themes for Cards */
-        .card[data-theme="purple"]:hover { border-color: rgba(192, 132, 252, 0.4); box-shadow: 0 15px 35px var(--accent-purple-glow); }
-        .card[data-theme="emerald"]:hover { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 15px 35px var(--accent-emerald-glow); }
-        .card[data-theme="cyan"]:hover { border-color: rgba(6, 182, 212, 0.4); box-shadow: 0 15px 35px var(--accent-cyan-glow); }
-        .card[data-theme="gold"]:hover { border-color: rgba(250, 204, 21, 0.4); box-shadow: 0 15px 35px var(--accent-gold-glow); }
 
         .card-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 1.25rem;
         }
 
         .card-icon {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .card-title {
-            font-size: 1.35rem;
-            font-weight: 700;
+            font-size: 1.15rem;
+            font-weight: 600;
             color: #fff;
             margin-bottom: 0.25rem;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
         }
 
         .card-tagline {
-            font-size: 0.825rem;
-            color: var(--accent-cyan);
+            font-size: 0.78rem;
+            color: var(--text-dim);
             font-family: 'Fira Code', monospace;
             margin-bottom: 1rem;
-            font-weight: 500;
         }
-
-        .card[data-theme="gold"] .card-tagline { color: var(--accent-gold); }
-        .card[data-theme="purple"] .card-tagline { color: var(--accent-purple); }
-        .card[data-theme="emerald"] .card-tagline { color: var(--accent-emerald); }
 
         .card-desc {
             color: var(--text-muted);
-            font-size: 0.925rem;
+            font-size: 0.88rem;
             margin-bottom: 1.5rem;
-            line-height: 1.65;
+            line-height: 1.6;
             flex-grow: 1;
         }
 
         .card-desc strong {
             color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .card-desc code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            color: var(--accent-gold-light);
         }
 
         .card-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1.5rem;
+            gap: 0.35rem;
+            margin-bottom: 1.25rem;
         }
 
         .tag {
             font-family: 'Fira Code', monospace;
-            font-size: 0.725rem;
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text-muted);
-            padding: 0.25rem 0.65rem;
+            font-size: 0.7rem;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-dim);
+            padding: 0.2rem 0.5rem;
             border-radius: var(--radius-sm);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .badge-tag {
             font-family: 'Fira Code', monospace;
-            font-size: 0.725rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.6rem;
             border-radius: 50px;
             border: 1px solid transparent;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-muted);
+            border-color: rgba(255, 255, 255, 0.08);
         }
 
-        .badge-tag.purple { background: rgba(192, 132, 252, 0.12); color: var(--accent-purple); border-color: rgba(192, 132, 252, 0.3); }
-        .badge-tag.emerald { background: rgba(52, 211, 153, 0.12); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.3); }
-        .badge-tag.cyan { background: rgba(6, 182, 212, 0.12); color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.3); }
-        .badge-tag.gold { background: rgba(250, 204, 21, 0.12); color: var(--accent-gold); border-color: rgba(250, 204, 21, 0.3); }
-        .badge-tag.pink { background: rgba(244, 114, 182, 0.12); color: var(--accent-pink); border-color: rgba(244, 114, 182, 0.3); }
-        .badge-tag.blue { background: rgba(96, 165, 250, 0.12); color: var(--accent-blue); border-color: rgba(96, 165, 250, 0.3); }
+        .badge-tag.gold { color: var(--accent-gold-light); border-color: rgba(217, 119, 6, 0.3); background: rgba(217, 119, 6, 0.05); }
+        .badge-tag.purple { color: var(--accent-purple-light); border-color: rgba(124, 58, 237, 0.3); background: rgba(124, 58, 237, 0.05); }
+        .badge-tag.cyan { color: var(--accent-cyan-light); border-color: rgba(8, 145, 178, 0.3); background: rgba(8, 145, 178, 0.05); }
+        .badge-tag.emerald { color: var(--accent-emerald-light); border-color: rgba(5, 150, 105, 0.3); background: rgba(5, 150, 105, 0.05); }
 
         /* --- Buttons --- */
         .btn {
             text-decoration: none;
             text-align: center;
             width: 100%;
-            padding: 0.825rem 1.25rem;
+            padding: 0.65rem 1rem;
             border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.825rem;
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
@@ -454,63 +428,40 @@
         }
 
         .btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
             color: #fff;
         }
-
-        .card[data-theme="purple"] .btn { border-color: rgba(192, 132, 252, 0.3); color: var(--accent-purple); background: rgba(192, 132, 252, 0.05); }
-        .card[data-theme="purple"] .btn:hover { background: var(--accent-purple); color: #000; box-shadow: 0 4px 20px var(--accent-purple-glow); }
-
-        .card[data-theme="emerald"] .btn { border-color: rgba(52, 211, 153, 0.3); color: var(--accent-emerald); background: rgba(52, 211, 153, 0.05); }
-        .card[data-theme="emerald"] .btn:hover { background: var(--accent-emerald); color: #000; box-shadow: 0 4px 20px var(--accent-emerald-glow); }
-
-        .card[data-theme="cyan"] .btn { border-color: rgba(6, 182, 212, 0.3); color: var(--accent-cyan); background: rgba(6, 182, 212, 0.05); }
-        .card[data-theme="cyan"] .btn:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 4px 20px var(--accent-cyan-glow); }
-
-        .card[data-theme="gold"] .btn { border-color: rgba(250, 204, 21, 0.3); color: var(--accent-gold); background: rgba(250, 204, 21, 0.05); }
-        .card[data-theme="gold"] .btn:hover { background: var(--accent-gold); color: #000; box-shadow: 0 4px 20px var(--accent-gold-glow); }
 
         /* --- Footer --- */
         footer {
             text-align: center;
             padding: 3rem 1.5rem;
-            background-color: #03050a;
+            background-color: #02040a;
             color: var(--text-dim);
             font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             border-top: 1px solid var(--card-border);
         }
 
         footer strong {
             color: var(--text-muted);
-        }
-
-        footer a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        footer a:hover {
-            color: #fff;
-            text-decoration: underline;
+            font-weight: 500;
         }
 
         /* --- Responsive Queries --- */
         @media (max-width: 868px) {
             .grid { grid-template-columns: 1fr; }
-            .nav-container { padding: 0.8rem 1.25rem; }
-            .nav-links { gap: 0.4rem; }
-            .nav-link { font-size: 0.8rem; padding: 0.4rem 0.75rem; }
+            .nav-container { padding: 1rem 1.25rem; }
+            .nav-links { gap: 0.25rem; }
+            .nav-link { font-size: 0.8rem; padding: 0.4rem 0.6rem; }
         }
 
         @media (max-width: 640px) {
             .nav-container { flex-direction: column; gap: 0.8rem; }
             .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; }
-            header { padding-top: 10rem; }
-            .card { padding: 1.5rem; }
-            .section-header { margin-bottom: 1.75rem; }
+            header { padding-top: 9rem; }
+            .card { padding: 1.25rem; }
         }
     </style>
 </head>
@@ -521,7 +472,7 @@
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <div class="logo-icon">⚡</div>
-                <span>SaadPie</span>
+                <span>Saad Pie</span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link active">Hub</a></li>
@@ -546,24 +497,93 @@
         </div>
         
         <h1 class="title">Saad Pie</h1>
-        <p class="subtitle">&gt; Termux Master | 8-Bit CPU Builder | Polyglot Dev | GPT Math &amp; Calculus</p>
+        <p class="subtitle">&gt; Architect of Digital AGI | Termux Master | 8-Bit CPU Builder | Polyglot Dev</p>
         <p class="hero-desc">
-            Polyglot Developer proficient across Python, C/C++, Rust, Go, Java, Lua, and Assembly. Builder of 8-bit computers from scratch in Minecraft and simulators, robotics architect (Arduino/ESP), deployer of tens of Hugging Face Spaces, and LGS O2 Scholar.
+            Young innovator, builder, and creator of <strong>SteveAI</strong>. As a 15-year-old O Level student at LGS, I explore the intersection of intelligence, imagination, and technology with a mission to shape meaningful AI for the future. Coined the term <strong>"Digital AGI"</strong> to describe my vision for AI that thinks, assists, creates, and executes alongside humans.
         </p>
     </header>
 
     <div class="container">
         
-        <!-- Section 0: Technical Stack & Low-Level Engineering -->
+        <!-- Section 0: Vision, Multidisciplinary Philosophy & Digital AGI -->
         <section class="section-block">
-            <div class="section-header purple">
+            <div class="section-header">
+                <h2>Vision, Philosophy &amp; Interdisciplinary Reach</h2>
+                <p>Bridging technology with human thought to pioneer Digital AGI.</p>
+            </div>
+
+            <div class="grid">
+                <!-- Digital AGI Vision -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="card-icon">👁️</div>
+                            <span class="badge-tag gold">Core Philosophy</span>
+                        </div>
+                        <h3 class="card-title">The "Digital AGI" Paradigm</h3>
+                        <div class="card-tagline">Thinking • Assisting • Creating • Executing</div>
+                        <p class="card-desc">Pioneering a digital mind that works alongside humanity. Digital AGI goes beyond simple answers to actively perform complex multi-step execution, autonomous reasoning, and continuous collaborative workflow creation.</p>
+                        <div class="card-tags">
+                            <span class="tag">Digital AGI</span>
+                            <span class="tag">Human Amplification</span>
+                            <span class="tag">Autonomous Reasoning</span>
+                        </div>
+                    </div>
+                    <div class="btn">Shaping Future Systems</div>
+                </div>
+
+                <!-- Multidisciplinary PURSUITS -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="card-icon">🌐</div>
+                            <span class="badge-tag purple">Deep Learning</span>
+                        </div>
+                        <h3 class="card-title">Interdisciplinary Horizon</h3>
+                        <div class="card-tagline">Psychology, Philosophy, Ethics &amp; Arts</div>
+                        <p class="card-desc">Expanding beyond tech into psychology, philosophy, futurism, education, and ethics. Analyzing human cognition to question boldly, think deeply, and engineer purposeful technology with ethical foundation.</p>
+                        <div class="card-tags">
+                            <span class="tag">Psychology</span>
+                            <span class="tag">Ethics</span>
+                            <span class="tag">Philosophy</span>
+                            <span class="tag">Futurism</span>
+                        </div>
+                    </div>
+                    <div class="btn">Purpose-Driven Engineering</div>
+                </div>
+
+                <!-- Massive Project Scale -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="card-icon">⚡</div>
+                            <span class="badge-tag cyan">Thousands Built</span>
+                        </div>
+                        <h3 class="card-title">1,000+ Systems &amp; Chess Engine</h3>
+                        <div class="card-tagline">Agents, Bots, Shaders &amp; Custom Engines</div>
+                        <p class="card-desc">Architected thousands of individual tools including LLM agents, bots, graphics shaders, workflow engines, and a custom chess engine built to rival and surpass Stockfish 16 levels.</p>
+                        <div class="card-tags">
+                            <span class="tag">Custom Chess Engine</span>
+                            <span class="tag">Shaders</span>
+                            <span class="tag">LLM Agents</span>
+                            <span class="tag">Automations</span>
+                        </div>
+                    </div>
+                    <div class="btn">High-Scale Production</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Technical Stack & Low-Level Engineering -->
+        <section class="section-block">
+            <div class="section-header">
                 <h2>Technical Stack &amp; Low-Level Mastery</h2>
                 <p>From terminal dominance &amp; custom CPUs to deep learning mathematics.</p>
             </div>
 
             <div class="grid">
                 <!-- Termux & Polyglot Languages -->
-                <div class="card" data-theme="purple">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">💻</div>
@@ -571,21 +591,21 @@
                         </div>
                         <h3 class="card-title">Polyglot Developer</h3>
                         <div class="card-tagline">Terminal Mastery &amp; Multi-Lang Architecture</div>
-                        <p class="card-desc"><strong>Master:</strong> Python. <strong>Advanced:</strong> HTML, CSS, JS. <strong>Core/Intro:</strong> Rust, C, C#, C++, Golang, Java, Visual Basic, Lua/Luau. Terminal automation expert using Termux environment.</p>
+                        <p class="card-desc"><strong>Proficient Languages:</strong> Python, C/C++, C#, Java, Rust, Lua, R, Assembly, Go, and JS/TS. Skilled with Docker, Kubernetes, Blender, Manim, n8n, React, and Node.js in Termux environments.</p>
                         <div class="card-tags">
-                            <span class="tag">Termux</span>
-                            <span class="tag">Python Master</span>
+                            <span class="tag">Python</span>
                             <span class="tag">C / C++</span>
                             <span class="tag">Rust</span>
-                            <span class="tag">Golang</span>
-                            <span class="tag">Java</span>
+                            <span class="tag">Assembly</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">n8n</span>
                         </div>
                     </div>
                     <div class="btn">Terminal Mastery Active</div>
                 </div>
 
                 <!-- Hardware, Robotics & 8-Bit CPU -->
-                <div class="card" data-theme="emerald">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">🧱</div>
@@ -606,7 +626,7 @@
                 </div>
 
                 <!-- Deep Learning Math & HF Spaces Cloud -->
-                <div class="card" data-theme="cyan">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">🧠</div>
@@ -630,97 +650,47 @@
             </div>
         </section>
 
-        <!-- Section 1: Academic & Competition Distinctions -->
+        <!-- Section 2: Flagship Systems & Neural Models -->
         <section class="section-block">
-            <div class="section-header gold">
-                <h2>Academic &amp; Competition Distinctions</h2>
-                <p>O2 Cambridge Scholar at Lahore Grammar School &amp; Global Math/Linguistic Honors.</p>
+            <div class="section-header">
+                <h2>Flagship Systems &amp; Neural Models</h2>
+                <p>Cross-platform apps, custom LLMs, wearable hardware, and SteveAI ecosystem.</p>
             </div>
 
             <div class="grid">
-                <!-- IKMC Global Achievement -->
-                <div class="card" data-theme="gold">
-                    <div>
-                        <div class="card-header">
-                            <div class="card-icon">🥇</div>
-                            <span class="badge-tag gold">World Top 10</span>
-                        </div>
-                        <h3 class="card-title">IKMC World &amp; National Winner</h3>
-                        <div class="card-tagline">International Kangaroo Mathematics Contest</div>
-                        <p class="card-desc">Achieved <strong>1st Position</strong> in School, Lahore City, and Punjab Province! Ranked <strong>2nd/3rd in Pakistan</strong> and <strong>10th Worldwide</strong> in IKMC (earned class badge award in Grade 5).</p>
-                        <div class="card-tags">
-                            <span class="tag">#1 Lahore</span>
-                            <span class="tag">#1 Punjab</span>
-                            <span class="tag">Top 3 Pakistan</span>
-                            <span class="tag">#10 World</span>
-                        </div>
-                    </div>
-                    <div class="btn">IKMC Champion Medalist</div>
-                </div>
-
-                <!-- LGS Academic & Robotics -->
-                <div class="card" data-theme="cyan">
-                    <div>
-                        <div class="card-header">
-                            <div class="card-icon">🏫</div>
-                            <span class="badge-tag cyan">O2 Scholar</span>
-                        </div>
-                        <h3 class="card-title">Lahore Grammar School (LGS)</h3>
-                        <div class="card-tagline">O-Levels 2nd Year (10th Grade)</div>
-                        <p class="card-desc">Pursuing Cambridge O-Levels (O2) at LGS. Competed in IKLC winning a Bronze Medal in Grade 8, and built 3D-rendered games on Scratch alongside inter-school Robotics projects.</p>
-                        <div class="card-tags">
-                            <span class="tag">LGS</span>
-                            <span class="tag">O2 Student</span>
-                            <span class="tag">IKLC Bronze</span>
-                            <span class="tag">Scratch 3D</span>
-                        </div>
-                    </div>
-                    <div class="btn">LGS O2 Student Profile</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Flagship Mobile Apps, Systems & Neural Models -->
-        <section class="section-block">
-            <div class="section-header cyan">
-                <h2>Flagship Mobile Apps &amp; Neural Systems</h2>
-                <p>Cross-platform iOS &amp; Android apps, custom LLMs, and wearable hardware concepts.</p>
-            </div>
-
-            <div class="grid">
-                <!-- SteveAI Mobile App -->
-                <div class="card" data-theme="cyan">
+                <!-- SteveAI Ecosystem -->
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">🤖</div>
-                            <span class="badge-tag blue">iOS &amp; Android App</span>
+                            <span class="badge-tag gold">Flagship Engine</span>
                         </div>
-                        <h3 class="card-title">SteveAI App</h3>
-                        <div class="card-tagline">Ultimate Multi-Modal Mobile App</div>
-                        <p class="card-desc">Cross-platform mobile application routing requests across 30+ specialized models for instant reasoning, live audio streaming, video synthesis, and 3D rendering.</p>
+                        <h3 class="card-title">SteveAI System</h3>
+                        <div class="card-tagline">Creative Collaborator &amp; Reasoning Partner</div>
+                        <p class="card-desc">SteveAI offers multi-model reasoning, live search, automated file analysis, code debugging, image synthesis, and planning assistance designed to dramatically reduce repetitive tasks and accelerate learning.</p>
                         <div class="card-tags">
-                            <span class="tag">iOS App</span>
-                            <span class="tag">Android App</span>
-                            <span class="tag">30+ Models</span>
+                            <span class="tag">Multi-Model</span>
+                            <span class="tag">Live Search</span>
+                            <span class="tag">Code Debugger</span>
                             <span class="tag">Wan 2.1</span>
                         </div>
                     </div>
-                    <a href="steveai.html" class="btn">View Dedicated Page →</a>
+                    <a href="steveai.html" class="btn">Explore SteveAI →</a>
                 </div>
 
                 <!-- ASH BAND Mobile App -->
-                <div class="card" data-theme="emerald">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">⌚</div>
-                            <span class="badge-tag emerald">iOS &amp; Android App</span>
+                            <span class="badge-tag emerald">Hardware &amp; App</span>
                         </div>
-                        <h3 class="card-title">ASH BAND App</h3>
-                        <div class="card-tagline">Spatial Wearable Mobile Hub</div>
-                        <p class="card-desc">Official mobile ecosystem for the screenless AI wristband featuring real-time double-pinch gesture recognition, rotational volume tracking, and remote control.</p>
+                        <h3 class="card-title">ASH BAND Ecosystem</h3>
+                        <div class="card-tagline">Spatial Wearable &amp; Voice Hub</div>
+                        <p class="card-desc">Official mobile ecosystem for the screenless AI wristband featuring real-time double-pinch gesture recognition, rotational volume tracking, and seamless voice UI execution.</p>
                         <div class="card-tags">
-                            <span class="tag">iOS App</span>
-                            <span class="tag">Android App</span>
+                            <span class="tag">Wearable AI</span>
+                            <span class="tag">Gesture Control</span>
                             <span class="tag">Spatial Gyro</span>
                             <span class="tag">Voice UI</span>
                         </div>
@@ -729,18 +699,17 @@
                 </div>
 
                 <!-- CallerAI Mobile App -->
-                <div class="card" data-theme="purple">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">📞</div>
-                            <span class="badge-tag purple">iOS &amp; Android App</span>
+                            <span class="badge-tag purple">Telephony AI</span>
                         </div>
-                        <h3 class="card-title">CallerAI App</h3>
+                        <h3 class="card-title">CallerAI System</h3>
                         <div class="card-tagline">Simulated AI Telephony Hub</div>
-                        <p class="card-desc">Interactive mobile telephony application featuring scheduled inbound calls, custom contact dialpads, ambient background audio injection, and AI Bazar access.</p>
+                        <p class="card-desc">Interactive telephony platform featuring scheduled inbound calls, custom dialpads, ambient background audio injection, and AI Bazar voice character integration.</p>
                         <div class="card-tags">
-                            <span class="tag">iOS App</span>
-                            <span class="tag">Android App</span>
+                            <span class="tag">Telephony</span>
                             <span class="tag">Inbound Calls</span>
                             <span class="tag">AI Bazar</span>
                         </div>
@@ -749,11 +718,11 @@
                 </div>
 
                 <!-- SteveAI-Mistral-Personas -->
-                <div class="card" data-theme="purple">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">💠</div>
-                            <span class="badge-tag pink">Hugging Face LLM</span>
+                            <span class="badge-tag purple">Hugging Face LLM</span>
                         </div>
                         <h3 class="card-title">SteveAI-Mistral-Personas</h3>
                         <div class="card-tagline">1,000 Souls • Qubit-State Architecture</div>
@@ -774,14 +743,14 @@
 
         <!-- Section 3: Financial Quant & Trading AI -->
         <section class="section-block">
-            <div class="section-header emerald">
+            <div class="section-header">
                 <h2>Financial Quant &amp; Trading AI</h2>
                 <p>Algorithmic market modeling, Exness execution, and commodity AI predictions.</p>
             </div>
 
             <div class="grid">
                 <!-- Forex AI Predictor (Gold / XAUUSD) -->
-                <div class="card" data-theme="gold">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">🥇</div>
@@ -801,7 +770,7 @@
                 </div>
 
                 <!-- Exness Cent Account Track Record -->
-                <div class="card" data-theme="emerald">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">💵</div>
@@ -824,14 +793,14 @@
 
         <!-- Section 4: Live Web Apps & Educational Platforms -->
         <section class="section-block">
-            <div class="section-header cyan">
+            <div class="section-header">
                 <h2>Live Web Apps &amp; Innovations</h2>
                 <p>Study ecosystems, instant utilities, custom lexicons, cloud builders, and web experiences.</p>
             </div>
 
             <div class="grid">
                 <!-- ACE 1123 English Study Hub -->
-                <div class="card" data-theme="gold">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">📚</div>
@@ -853,7 +822,7 @@
                 </div>
 
                 <!-- Inspirator SteveAI -->
-                <div class="card" data-theme="gold">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">⚡</div>
@@ -874,7 +843,7 @@
                 </div>
 
                 <!-- Qousaint Lexicon -->
-                <div class="card" data-theme="cyan">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">📖</div>
@@ -895,11 +864,11 @@
                 </div>
 
                 <!-- SteveAI Puter Cloud -->
-                <div class="card" data-theme="cyan">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">🚀</div>
-                            <span class="badge-tag blue">Cloud Builder</span>
+                            <span class="badge-tag cyan">Cloud Builder</span>
                         </div>
                         <h3 class="card-title">SteveAI Puter</h3>
                         <div class="card-tagline">Instant Free Live App Builder</div>
@@ -916,7 +885,7 @@
                 </div>
 
                 <!-- Football Game -->
-                <div class="card" data-theme="emerald">
+                <div class="card">
                     <div>
                         <div class="card-header">
                             <div class="card-icon">⚽</div>
@@ -937,24 +906,62 @@
                 </div>
             </div>
         </section>
+
+        <!-- Section 5: Academic & Competition Distinctions -->
+        <section class="section-block">
+            <div class="section-header">
+                <h2>Academic &amp; Competition Distinctions</h2>
+                <p>O Level Cambridge Scholar at Lahore Grammar School &amp; Global Math/Linguistic Honors.</p>
+            </div>
+
+            <div class="grid">
+                <!-- IKMC Global Achievement -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="card-icon">🥇</div>
+                            <span class="badge-tag gold">World Top 10</span>
+                        </div>
+                        <h3 class="card-title">IKMC World &amp; National Winner</h3>
+                        <div class="card-tagline">International Kangaroo Mathematics Contest</div>
+                        <p class="card-desc">Achieved <strong>1st Position</strong> in School, Lahore City, and Punjab Province! Ranked <strong>2nd/3rd in Pakistan</strong> and <strong>10th Worldwide</strong> in IKMC (earned class badge award in Grade 5).</p>
+                        <div class="card-tags">
+                            <span class="tag">#1 Lahore</span>
+                            <span class="tag">#1 Punjab</span>
+                            <span class="tag">Top 3 Pakistan</span>
+                            <span class="tag">#10 World</span>
+                        </div>
+                    </div>
+                    <div class="btn">IKMC Champion Medalist</div>
+                </div>
+
+                <!-- LGS Academic & Robotics -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="card-icon">🏫</div>
+                            <span class="badge-tag cyan">O Level Scholar</span>
+                        </div>
+                        <h3 class="card-title">Lahore Grammar School (LGS)</h3>
+                        <div class="card-tagline">O Levels Student</div>
+                        <p class="card-desc">Pursuing Cambridge O Levels at LGS. Competed in IKLC winning a Bronze Medal in Grade 8, and built 3D-rendered games on Scratch alongside inter-school Robotics projects.</p>
+                        <div class="card-tags">
+                            <span class="tag">LGS</span>
+                            <span class="tag">O Levels</span>
+                            <span class="tag">IKLC Bronze</span>
+                            <span class="tag">Scratch 3D</span>
+                        </div>
+                    </div>
+                    <div class="btn">LGS Student Profile</div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • LGS O2 Scholar &amp; Developer Hub</p>
+        <p>Built with 💻 and ☕ by <strong>Saad Pie</strong> &copy; 2026 • LGS Cambridge Scholar &amp; Developer Hub</p>
     </footer>
 
-    <!-- Interactive Mouse Lighting effect -->
-    <script>
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
-    </script>
 </body>
 </html>
